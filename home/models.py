@@ -1,6 +1,6 @@
 from telnetlib import STATUS
 
-import self
+
 from django.db import models
 
 
