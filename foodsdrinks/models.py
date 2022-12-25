@@ -1,6 +1,7 @@
 from django.db import models
-from django.db.models.fields.files import ImageFieldFile
 
+from django.utils.safestring import mark_safe
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # Create your models here.
@@ -21,6 +22,10 @@ class Category(models.Model):
     def __str__(self):
         return self.yemekismi
 
+
+
+
+
 class foodsdrinks(models.Model):
     STATUS = (
         ('True' , 'Evet'),
@@ -33,7 +38,7 @@ class foodsdrinks(models.Model):
     image = models.ImageField(blank=True, upload_to='images/')
     price = models.FloatField()
     amount=models.IntegerField()
-    detail=models.TextField()
+    detail=RichTextUploadingField()
 
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
