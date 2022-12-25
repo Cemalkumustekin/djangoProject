@@ -1,4 +1,5 @@
 from telnetlib import STATUS
+from django.db import models
 
 
 from django.db import models
@@ -19,15 +20,16 @@ class Setting(models.Model):
     fax = models.CharField(blank=True, max_length=15)
     email = models.CharField(blank=True, max_length=50)
     smtpserver= models.CharField(max_length=20)
-    smtepemail = models.CharField(max_length=1)
+    smtepemail = models.CharField(max_length=50)
     smtppassword = models.CharField(max_length=150)
-    smtpport = models.CharField(blank=True, max_length=5)
+    smtpport = models.CharField(blank=True, max_length=50)
     icon = models.ImageField(blank=True, upload_to='images/')
-    facebook = models.CharField(max_length=150)
-    instagram = models.CharField(max_length=150)
-    twitter = models.CharField(max_length=150)
-    aboutus = models.TextField()
-    referances = models.TextField()
+    facebook = models.CharField(blank=True,max_length=150)
+    instagram = models.CharField(blank=True,max_length=150)
+    twitter = models.CharField(blank=True,max_length=150)
+    aboutus = models.TextField(blank=True)
+    contact = models.TextField(blank=True)
+    referances = models.TextField(blank=True)
     status = models.CharField(max_length=10, choices=STATUS)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)

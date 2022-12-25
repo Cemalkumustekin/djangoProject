@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from foodsdrinks.models import Category, foodsdrinks, Images
-
+from home.models import Setting
 
 
 class foodsdrinksImageInline(admin.TabularInline):
@@ -26,3 +26,4 @@ class ImagesAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Category,CategoryAdmin)
 admin.site.register(foodsdrinks,foodsdrinksAdmin)
+admin.site.register(Setting)
