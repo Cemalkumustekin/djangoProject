@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from home import views
+
 urlpatterns = [
     path('', include('home.urls')),
     path('home/', include('home.urls')),
     path('admin/', admin.site.urls),
     path('foodsdrinks/', include('foodsdrinks.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('about/' , views.about, name='about')
+
 ]
