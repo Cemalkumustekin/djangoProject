@@ -21,3 +21,25 @@ class Category(models.Model):
     def __str__(self):
         return self.yemekismi
 
+class foodsdrinks(models.Model):
+    STATUS = (
+        ('True' , 'Evet'),
+        ('False' , 'Hayır'),
+    )
+    category= models.ForeignKey(Category, on_delete=models.CASCADE)#relation with category table
+    yemekismi = models.CharField(max_length=30)
+    icecekismi = models.CharField(max_length=30)
+    aciklama = models.CharField(max_length=255)
+    image = models.ImageField(blank=True, upload_to='images/')
+    price = models.FloatField()
+    amount=models.IntegerField()
+    detail=models.TextField()
+
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+class Images(models.Model):
+    foodsrinks=models.ForeignKey(foodsdrinks,on_delete=models.CASCADE)
+    yemekismi = models.CharField(max_length=50,blank=True)
+    image = models.ImageField(blank=True, upload_to='images/')
+
