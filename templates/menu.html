@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -13,26 +14,23 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="{%static 'images/favicon.png'%}" type="">
 
-  <title>  Django restorant sitesi </title>
-    <meta name="keywords" content=" Anasayfa anahtar kelimeler "/>
-    <meta name="description" content=" Anasayfa kısa açıklama  "/>
+  <title> {% block title %} Django restorant sitesi{% endblock %} </title>
+    <meta name="keywords" content="{% block keywords %} Anasayfa anahtar kelimeler{% endblock %} "/>
+    <meta name="description" content="{% block description %} Anasayfa kısa açıklama {% endblock %} "/>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{%static ' css/bootstrap.css'%}" />
+  <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.css'%}" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- nice select  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
-    {% load static %}
-  <link href="{%static 'css/font-awesome.min.css" rel="stylesheet'%}" />
+  <link href="{%static 'css/font-awesome.min.css'%}" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-    {% load static %}
   <link href="{%static 'css/style.css'%}" rel="stylesheet" />
   <!-- responsive style -->
-    {% load static %}
   <link href="{%static 'css/responsive.css'%}" rel="stylesheet" />
 
 </head>
@@ -60,23 +58,23 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item">
-                <a class="nav-link" href="/index">Home </a>
+                <a class="nav-link" href="/index">Anasayfa </a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="/menu">Menu <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" href=" /menu">Menu <span class="sr-only">(current)</span> </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
+                <a class="nav-link" href=" /about">Hakkımızda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/book">Book Table</a>
+                <a class="nav-link" href=" /book">İLETİŞİM</a>
               </li>
             </ul>
             <div class="user_option">
-              <a href="{%static ''%}" class="user_link">
+              <a href="{%static ' ' %}" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              <a class="cart_link" href="{%static '#'%}">
+              <a class="cart_link" href="{%static '#' %}">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                   <g>
                     <g>
@@ -135,7 +133,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="{%static ''%}" class="order_online">
+              <a href="{%static ' ' %}" class="order_online">
                 Order Online
               </a>
             </div>
@@ -170,8 +168,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                    {% load static %}
-                  <img src="{%static 'images/f1.png'%}" alt="">
+                  <img src="{%static 'images/f1.png'%}" alt=" ">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -184,7 +181,7 @@
                     <h6>
                       $20
                     </h6>
-                    <a href="{%static ''%}">
+                    <a href="{%static ' ' %}">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -260,7 +257,7 @@
                     <h6>
                       $15
                     </h6>
-                    <a href="{%static ''%}">
+                    <a href="{%static ' ' %}">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -336,7 +333,7 @@
                     <h6>
                       $17
                     </h6>
-                    <a href="{%static ''%}">
+                    <a href="{%static ' ' %}">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -399,7 +396,6 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                    {% load static %}
                   <img src="{%static 'images/f4.png'%}" alt="">
                 </div>
                 <div class="detail-box">
@@ -413,7 +409,7 @@
                     <h6>
                       $18
                     </h6>
-                    <a href="{%static ''%}">
+                    <a href="{%static ' ' %}">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -489,7 +485,7 @@
                     <h6>
                       $10
                     </h6>
-                    <a href="{%static ''%}">
+                    <a href="{%static ' ' %}">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -565,7 +561,7 @@
                     <h6>
                       $15
                     </h6>
-                    <a href="{%static ''%}">
+                    <a href="{%static ' ' %}">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -641,7 +637,7 @@
                     <h6>
                       $12
                     </h6>
-                    <a href="{%static ''%}">
+                    <a href="{%static ' ' %}">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -717,7 +713,7 @@
                     <h6>
                       $14
                     </h6>
-                    <a href="{%static ''%}">
+                    <a href="{%static ' ' %}">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -780,7 +776,6 @@
             <div class="box">
               <div>
                 <div class="img-box">
-
                   <img src="{%static 'images/f9.png'%}" alt="">
                 </div>
                 <div class="detail-box">
@@ -794,7 +789,7 @@
                     <h6>
                       $10
                     </h6>
-                    <a href="{%static ''%}">
+                    <a href="{%static ' ' %}">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -856,7 +851,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="{%static ''%}">
+        <a href="{%static ' ' %}">
           View More
         </a>
       </div>
@@ -875,19 +870,19 @@
               Contact Us
             </h4>
             <div class="contact_link_box">
-              <a href="{%static ''%}">
+              <a href="{%static ' ' %}">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
                 </span>
               </a>
-              <a href="{%static ''%}">
+              <a href="{%static ' ' %}">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
                   Call +01 1234567890
                 </span>
               </a>
-              <a href="{%static ''%}">
+              <a href="{%static ' ' %}">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
                   demo@gmail.com
@@ -898,27 +893,26 @@
         </div>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
-            <a href="{%static ''%}" class="footer-logo">
+            <a href="{%static ' ' %}" class="footer-logo">
               Feane
             </a>
             <p>
               Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
             </p>
             <div class="footer_social">
-                {% load static %}
-              <a href="">
+              <a href=" ">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href=" ">
                 <i class="fa fa-twitter" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href=" ">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href=" ">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href=" ">
                 <i class="fa fa-pinterest" aria-hidden="true"></i>
               </a>
             </div>
@@ -939,9 +933,9 @@
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
+          <a href=" https://html.design/">Free Html Templates</a><br><br>
           &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+          <a href=" https://themewagon.com/" target="_blank">ThemeWagon</a>
         </p>
       </div>
     </div>
