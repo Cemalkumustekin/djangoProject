@@ -24,6 +24,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('foodsdrinks/', include('foodsdrinks.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('about/' , views.about, name='about')
+    path('about/' , views.about, name='about'),
+    path('book/' , views.book, name='book'),
+    path('menu/' , views.menu, name='menu'),
+    path('index/' , views.index, name='index')
 
 ]

@@ -1,0 +1,10 @@
+{% extends "homebase.html" %}
+
+{% block title%} {{ setting.title }} {% endblock %}
+{% block keywords %}{{ setting.keywordse }} {% endblock %}
+{% block description %}{{ setting.description }} {% endblock %}
+
+
+{% block content %}
+     {% include "content.html" %}
+{% endblock %}
