@@ -1,5 +1,5 @@
 from telnetlib import STATUS
-from django.forms import ModelForm,TextInput
+from django.forms import ModelForm,TextInput, Textarea
 
 from django.db import models
 
@@ -43,6 +43,7 @@ class ContactFormMessage(models.Model):
     STATUS = (
         ('New' , 'New'),
         ('Read' , 'Read'),
+        ('Closed', 'Closed'),
     )
     name= models.CharField(blank=True, max_length=20)
     email= models.CharField(blank=True, max_length=50)
@@ -59,5 +60,13 @@ class ContactFormMessage(models.Model):
         return str(self.name)
 
 
-class ContactFormu:
-    pass
+class ContactFormu(ModelForm):
+    class Meta:
+        model = ContactFormMessage
+        fields = ['name', 'email', 'subject', 'message']
+        widgets = {
+            'name'   : TextInput(attrs={'class': 'form-control', 'placeholder':'Name & Surname'}),
+            'subject'   : TextInput(attrs={'class': 'form-control', 'placeholder':'Subject'}),
+            'email': TextInput(attrs={'class': 'form-control', 'placeholder': 'Email Address'}),
+            'message': TextInput(attrs={ 'class': 'form-control', 'placeholder': 'Your Message','rows':'5'}),
+        }

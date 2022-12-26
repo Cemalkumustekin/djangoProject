@@ -19,14 +19,12 @@ class foodsdrinksAdmin(admin.ModelAdmin):
 class ImagesAdmin(admin.ModelAdmin):
     list_display = ['yemekismi'  , 'foodsdrinks', 'image']
 
-class ContactFormMessageAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'subject', 'status']
-    list_filter = ['status']
+
 
 
 
 # Register your models here.
 admin.site.register(Category,CategoryAdmin)
 admin.site.register(foodsdrinks,foodsdrinksAdmin)
-admin.site.register(Setting)
-admin.site.register(ContactFormMessage,ContactFormMessageAdmin)
+
+

@@ -12,7 +12,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="{%  static 'images/favicon.png'%}" type="">
+  <link rel="shortcut icon" href="{% static 'images/favicon.png'%}" type="">
 
   <title> Feane </title>
 
@@ -24,7 +24,7 @@
   <!-- nice select  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
-  <link href="{% static 'css/font-awesome.min.css'%}'" rel="stylesheet" />
+  <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
   <link href="{% static 'css/style.css'%}" rel="stylesheet" />
@@ -43,7 +43,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="{% static 'index.html'%}">
+          <a class="navbar-brand" href="index.html">
             <span>
               Feane
             </span>
@@ -65,11 +65,11 @@
                 <a class="nav-link" href="/about">Hakkımızda</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="/book">Book Table <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" href="/book">İLETİŞİM <span class="sr-only">(current)</span> </a>
               </li>
             </ul>
             <div class="user_option">
-              <a href="{% static '' %}" class="user_link">
+              <a href="{% static ''%}" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
               <a class="cart_link" href="{% static '#'%}">
@@ -131,7 +131,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="{% static '' %}" class="order_online">
+              <a href="{% static ''%}" class="order_online">
                 Order Online
               </a>
             </div>
@@ -147,49 +147,35 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Book A Table
+          Bize Ulaşın
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" class="form-control" placeholder="Your Name" />
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="email" class="form-control" placeholder="Your Email" />
-              </div>
-              <div>
-                <select class="form-control nice-select wide">
-                  <option value="" disabled selected>
-                    How many persons?
-                  </option>
-                  <option value="">
-                    2
-                  </option>
-                  <option value="">
-                    3
-                  </option>
-                  <option value="">
-                    4
-                  </option>
-                  <option value="">
-                    5
-                  </option>
-                </select>
-              </div>
-              <div>
-                <input type="date" class="form-control">
-              </div>
-              <div class="btn_box">
+              {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+              {% endif %}
+
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="btn_box">
                 <button>
-                  Book Now
+                  Gönder
                 </button>
               </div>
+
+            </form>
+          {{ Setting.contact|safe }}
+
+
+
+
             </form>
           </div>
         </div>
@@ -213,19 +199,19 @@
               Contact Us
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="{% static ''%}">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
                 </span>
               </a>
-              <a href="">
+              <a href="{% static ''%}">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
                   Call +01 1234567890
                 </span>
               </a>
-              <a href="">
+              <a href="{% static ''%}">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
                   demo@gmail.com
@@ -236,7 +222,7 @@
         </div>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
-            <a href="{% static '' %}" class="footer-logo">
+            <a href="{% static ''%}" class="footer-logo">
               Feane
             </a>
             <p>
