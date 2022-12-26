@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from home.models import Setting
+from home.models import Setting, ContactFormu, ContactFormMessage
 
 
 # Create your views here.
