@@ -28,5 +28,5 @@ urlpatterns = [
     path('book/' , views.book, name='book'),
     path('menu/' , views.menu, name='menu'),
     path('index/' , views.index, name='index'),
-    path('login/' , views.login, name='login')
+    path('login/' , views.login_view, name='login_view')
 ]

@@ -1,9 +1,10 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
-
+from django.contrib.auth.models import User
 from django.shortcuts import render
 
+from foodsdrinks.models import Category
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
@@ -30,7 +31,7 @@ def book(request):
     context={'setting': setting, 'page':'book'}
     return render(request, 'book.html',context)
 
-def login(request):
+def login1(request):
     setting = Setting.objects.get(pk=1)
     context={'setting': setting, 'page':'login'}
     return render(request, 'login.html',context)
@@ -61,20 +62,25 @@ def book(request):
     context = {'setting': setting, 'form': form}
     return render(request, 'book.html', context)
 
-def login_view(request, password=None):
-    if request.method== 'POST':
+def login_view(request):
+    if request.method == 'POST':
         username = request.POST['username']
-        username = request.POST['password']
+        password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request,user)
+
             return HttpResponseRedirect('/')
         else:
-            messages.warning(request, "Login hatası KUllanıcı ya da şifre yanlış")
-    category = Category.objects.all()
-    context = { 'category': category,}
+            messages.warning(request, "Login hatası! Kullanıcı ya da şifre yanlış")
+            return HttpResponseRedirect('/login')
 
-    return render(request, 'login.html',context)
+
+    category = Category.objects.all()
+    context = {'category': category,
+               }
+
+    return render(request, 'login.html')
 
 
 
