@@ -27,6 +27,6 @@ urlpatterns = [
     path('about/' , views.about, name='about'),
     path('book/' , views.book, name='book'),
     path('menu/' , views.menu, name='menu'),
-    path('index/' , views.index, name='index')
-
+    path('index/' , views.index, name='index'),
+    path('login/' , views.login, name='login')
 ]
